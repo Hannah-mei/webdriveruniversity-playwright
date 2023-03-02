@@ -7,19 +7,16 @@ test.beforeEach(async({page}) => {
 })
 
 test('selects every option and checks the value', async ({page}) => {
-    let dropdown1Values = ['JAVA', 'C#', 'Python', 'SQL'];
-    let dropdown2Values = ['Eclipse', 'Maven', 'TestNG', 'JUnit'];
-    let dropdown3Values = ['HTML', 'CSS', 'JavaScript', 'JQuery'];
-    let dropdowns = [dropdown1Values, dropdown2Values, dropdown3Values];
-    for (let i=0; i<dropdowns.length; i++) {
-        const dropdown = page.locator('#dropdowm-menu-'+(i+1));
-        const dropdownValues = dropdowns[i];
-        for (let j=0; j<dropdown1Values.length; j++) {
-            await dropdown.selectOption({index: j});
-            expect (await dropdown.getByRole('option').nth(j).textContent()).toBe(dropdownValues[j])            
-        }
-
-    }
-
+    const dropDownsPage = new DropDownsPage(page)
+    await dropDownsPage.testDropdowns()
 })
 
+test('checks all boxes and unchecks box 2 and 4', async ({page}) => {
+    const dropDownsPage = new DropDownsPage(page);
+    await dropDownsPage.testCheckboxes();
+})
+
+test('checks all the radio buttons', async({page}) => {
+    const dropDownsPage = new DropDownsPage(page);
+    await dropDownsPage.testRadiobuttons()
+})
