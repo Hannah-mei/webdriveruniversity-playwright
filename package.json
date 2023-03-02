@@ -1,0 +1,21 @@
+{
+  "name": "webdriveruniversity-playwright",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hannah-mei/webdriveruniversity-playwright.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Hannah-mei/webdriveruniversity-playwright/issues"
+  },
+  "homepage": "https://github.com/Hannah-mei/webdriveruniversity-playwright#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.31.1"
+  }
+}
